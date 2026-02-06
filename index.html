@@ -3,59 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forever Valentine ❤️</title>
+<title>Forever Valentine 🌷</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(180deg, #ff758c, #ff7eb3);
+    font-family: 'Poppins', sans-serif;
+    background:
+      linear-gradient(rgba(255, 245, 248, 0.9), rgba(255, 245, 248, 0.9)),
+      url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
 }
 
 .card {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     width: 90%;
-    max-width: 360px;
-    padding: 28px;
-    border-radius: 28px;
+    max-width: 380px;
+    padding: 32px;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 50px rgba(255, 150, 180, 0.35);
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
-    color: #ff3366;
+    color: #e75480;
+    font-weight: 600;
     font-size: 24px;
+    line-height: 1.4;
 }
 
 .buttons {
-    margin-top: 25px;
+    margin-top: 30px;
     position: relative;
     height: 90px;
 }
 
 button {
-    padding: 12px 24px;
+    padding: 12px 26px;
     font-size: 16px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     position: absolute;
+    transition: 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 #yesBtn {
-    background: #ff3366;
+    background: linear-gradient(135deg, #ff5f9e, #ff87b2);
     color: white;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0 8px 20px rgba(255, 95, 158, 0.4);
+}
+
+#yesBtn:hover {
+    transform: translateX(-50%) scale(1.08);
 }
 
 #noBtn {
-    background: #eee;
-    color: #666;
+    background: #f3f3f3;
+    color: #777;
     left: 10%;
 }
 
@@ -65,15 +86,17 @@ button {
 
 img {
     width: 100%;
-    border-radius: 20px;
-    margin-top: 20px;
+    border-radius: 22px;
+    margin-top: 22px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 </style>
 </head>
 <body>
 
 <div class="card" id="question">
-    <h1>Will you be my Valentine forever? 💍❤️</h1>
+    <h1>Will you be my Valentine forever? 🌷💍</h1>
+
     <div class="buttons">
         <button id="yesBtn" onclick="yes()">YES 💖</button>
         <button id="noBtn" onmouseover="moveNo()">NO 😅</button>
@@ -81,8 +104,11 @@ img {
 </div>
 
 <div class="card hidden" id="love">
-    <h1>I love you my babby ❤️<br>We will always be forever ♾️</h1>
-    <img src="your-image.png">
+    <h1>
+        I love you my babby ❤️<br>
+        We will always be forever ♾️
+    </h1>
+    <img src="your-image.png" alt="Us together">
 </div>
 
 <script>
@@ -100,3 +126,4 @@ function yes() {
 
 </body>
 </html>
+
